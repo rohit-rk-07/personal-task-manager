@@ -1,4 +1,4 @@
-import {BrowserRouter, Routes, Route, Link} from 'react-router-dom';
+import {BrowserRouter, Routes, Route, Link, HashRouter} from 'react-router-dom';
 import Completed from './pages/Completed';
 import Home from './pages/Home';
 import Navbar from './components/Navbar';
@@ -10,13 +10,13 @@ function App() {
   return (
     <div className='app'>
       <TodoContextProvider>
-        <BrowserRouter>
+        <HashRouter>
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/completed" element={<Completed />}/>
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </TodoContextProvider>
     </div>
   )
